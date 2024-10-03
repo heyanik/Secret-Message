@@ -1,0 +1,166 @@
+/* General body styles */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animated blobs */
+.blob {
+  position: absolute;
+  background: rgba(0, 123, 255, 0.3);
+  border-radius: 50%;
+  filter: blur(150px);
+  animation: moveBlobs 25s infinite;
+  z-index: -1;
+}
+
+.blob:nth-child(1) {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  left: -100px;
+  background: rgba(0, 123, 255, 0.3);
+}
+
+.blob:nth-child(2) {
+  width: 300px;
+  height: 300px;
+  bottom: 50px;
+  right: 50px;
+  background: rgba(255, 193, 7, 0.3);
+}
+
+.blob:nth-child(3) {
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(40, 167, 69, 0.3);
+}
+
+@keyframes moveBlobs {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) translateX(30px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+/* Container for the whole form */
+.container {
+  position: relative;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Main title styling */
+h1 {
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Textarea styling */
+textarea {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fafafa;
+  transition: border-color 0.3s;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Button container */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Primary button styling */
+button.primary-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.primary-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Secondary button styling */
+button.secondary-btn {
+  background-color: #6c757d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.secondary-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Result textarea */
+textarea#result {
+  height: 80px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  background-color: #fafafa;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+/* Copy button styling */
+button.primary-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:focus {
+  outline: none;
+}
+
+@media (max-width: 500px) {
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
